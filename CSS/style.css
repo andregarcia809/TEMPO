@@ -24,6 +24,7 @@ body h1 {
   margin-top: 1rem;
 }
 
+/* Header  */
 #main__header {
   background: rgba(0, 0, 0, 0.6);
   border-bottom: 2px solid #ec7702
@@ -233,7 +234,7 @@ header .location span {
   box-shadow: 3px 7px 20px 1px rgba(0, 0, 0, 0.75);
 }
 
-/* sun rays */
+/* sun rays     NOte: Need to adjust top and left position in order   */
 .sunny .rays {
   position: absolute;
   top: -2em;
@@ -284,7 +285,7 @@ header .location span {
   width: 3.6875em;
   height: 3.6875em;
   margin: -1.84375em;
-  background: transparent;
+  background: #fff;
   border-radius: 50%;
   box-shadow: -2.1875em 0.6875em 0 -0.6875em, 2.0625em 0.9375em 0 -0.9375em, 0 0 0 0.375em #fff, -2.1875em 0.6875em 0 -0.3125em #fff, 2.0625em 0.9375em 0 -0.5625em #fff;
 }
@@ -297,13 +298,12 @@ header .location span {
   display: block;
   width: 4.5625em;
   height: 1em;
-  background: transparent;
   box-shadow: 0 0.4375em 0 -0.0625em #fff;
 }
 
 .cloud:nth-child(2) {
   z-index: 0;
-  background: #fff;
+  /* background: red; */
   box-shadow:
     -2.1875em 0.6875em 0 -0.6875em #fff,
     2.0625em 0.9375em 0 -0.9375em #fff,
@@ -332,7 +332,7 @@ header .location span {
   width: 3.75em;
   height: 3.75em;
   margin: 0.375em 0 0 -2em;
-  /* background: transparent; need to adjust color  used control shift L to select all? */
+  background: transparent;
 }
 
 .rain:after {
@@ -355,7 +355,7 @@ header .location span {
 
 .bolt {
   position: absolute;
-  top: 50%;
+  top: 140%;
   left: 50%;
   margin: -0.25em 0 0 -0.125em;
   color: #fff;
@@ -421,11 +421,10 @@ header .location span {
 .flake:after {
   content: '\2744';
   position: absolute;
-  top: 50%;
+  top: 138%;
   left: 50%;
   margin: -1.025em 0 0 -1.0125em;
   color: #fff;
-  /* list-height: 1em; unknown property */
   opacity: 0.2;
   animation: spin 8s linear infinite reverse;
 }
@@ -510,5 +509,21 @@ header .location span {
     color: #fff;
     background: #fff;
     opacity: 0.2;
+  }
+}
+
+@keyframes cloud {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.5) translate(-200%, -3em);
+    transform: scale(0.5) translate(-200%, -3em);
   }
 }

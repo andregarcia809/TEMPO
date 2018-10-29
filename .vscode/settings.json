@@ -1,0 +1,52 @@
+{
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 24,
+  "editor.fontFamily": " 'Fira Code'",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120,
+  "editor.autoClosingBrackets": "always",
+  "beautify.language": {
+      "js": {
+          "type": [
+              "javascript",
+              "json",
+              "jsonc"
+          ],
+          "filename": [
+              ".jshintrc",
+              ".jsbeautifyrc"
+          ]
+      },
+      "css": [
+          "css",
+          "css3",
+          "scss"
+      ],
+      "html": [
+          "htm",
+          "html",
+          "html5"
+      ]
+  },
+  "liveServer.settings.port": 5000,
+  "liveServer.settings.wait": 200,
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.formatOnSave": true,
+  "editor.fontLigatures": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "files.associations": {
+      "*.php": "php"
+  },
+  "editor.lineHeight": 45,
+  "window.zoomLevel": 0,
+  "workbench.iconTheme": "vscode-icons",
+  "php.validate.executablePath": "C:\\MAMP\\bin\\php\\php7.2.1\\php.exe",
+  "phpfmt.php_bin": "C:\\MAMP\\bin\\php\\php7.2.1\\php.exe",
+  "php.suggest.basic": true,
+  "php.validate.enable": true,
+  "workbench.colorTheme": "Monokai",
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.NoBrowser": true,
+
+}

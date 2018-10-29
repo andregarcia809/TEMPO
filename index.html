@@ -36,10 +36,12 @@
         <div class="current__forecast">
           <h1>Current Weather</h1>
           <div class="weather__icon">
-              <div class="cloud">
-                <div class="rain"></div>
-              </div>
+            <div class="cloud">
+              <div id="rain" class="bolt"></div>
+              <div id="rain" class="bolt"></div>
             </div>
+            <div id="cloudy" class="cloud"></div>
+          </div>
           <div class="temperature">
             <span class="temp__label">77</span>
             <span id="degrees"></span>
@@ -50,31 +52,32 @@
         <div class="tonight__forecast">
           <h1>Tonight</h1>
           <div class="weather__icon">
-            <div class="sunny">
+              <div id="cloudy" class="cloud"></div>
+            <div id="sun" class="sunny">
               <div class="rays"></div>
             </div>
+            <div id="cloudy" class="rain"></div>
           </div>
           <div class="temperature">
-              <span class="temp__label">77</span>
-              <span id="degrees"></span>
-              <span id="temperature__conversion">F</span>
-            </div>
+            <span class="temp__label">77</span>
+            <span id="degrees"></span>
+            <span id="temperature__conversion">F</span>
+          </div>
           <span class="weather__condition">Mostly sunny</span>
         </div>
         <div class="tomorrow__forecast">
           <h1>Tomorrrow</h1>
           <div class="weather__icon">
-              <div class="cloud">
-                <div class=""></div>
-                <div class="flake"></div>
-                <div class="flake"></div>
-              </div>
+            <div class="cloud">
+              <div class="flake"></div>
+              <div class="flake"></div>
             </div>
+          </div>
           <div class="temperature">
-              <span class="temp__label">77</span>
-              <span id="degrees"></span>
-              <span id="temperature__conversion">F</span>
-            </div>
+            <span class="temp__label">77</span>
+            <span id="degrees"></span>
+            <span id="temperature__conversion">F</span>
+          </div>
           <span class="weather__condition">Mostly sunny</span>
         </div>
       </div>
