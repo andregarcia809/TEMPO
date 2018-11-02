@@ -13,7 +13,7 @@
   <header id="main__header">
     <nav>
       <div class="logo">
-        <a href="#"><img src="" alt="LOGO"></a>
+        <a href="#"><img src="IMG/logo.png" alt="LOGO"></a>
       </div>
       <div class="search__bar__wrapper">
         <span></span>
@@ -21,20 +21,21 @@
         <div class="settings"></div>
       </div>
     </nav>
-    <div class="location">
+    <!-- <div class="location">
       <span>United States ></span>
       <span>west palm beach,FL 77F</span>
       <span>icon</span>
-    </div>
+    </div> -->
   </header>
   <div class="container">
     <main id="forecast__panel">
-      <header id="forecast__panel__header">
-        <h1>Header</h1>
-      </header>
       <div class="forecast__panel__body">
         <div class="current__forecast">
           <h1>Current Weather</h1>
+          <div class="weather__details">
+            <span id="city">New York</span>
+            <span class="weather__condition">Mostly sunny</span>
+          </div>
           <div class="weather__icon">
             <div class="cloud">
               <div id="rain" class="bolt"></div>
@@ -44,41 +45,62 @@
           </div>
           <div class="temperature">
             <span class="temp__label">77</span>
-            <span id="degrees"></span>
-            <span id="temperature__conversion">F</span>
+            <div class="temperature__conversion">
+              <span class="degrees"></span>
+              <span id="farenheight">F</span>
+              <span class="divider"></span>
+              <span class="degrees"></span>
+              <span id="celcius">c</span>
+            </div>
           </div>
-          <span class="weather__condition">Mostly sunny</span>
         </div>
         <div class="tonight__forecast">
           <h1>Tonight</h1>
-          <div class="weather__icon">
-              <div id="cloudy" class="cloud"></div>
-            <div id="sun" class="sunny">
-              <div class="rays"></div>
-            </div>
-            <div id="cloudy" class="rain"></div>
+          <div class="weather__details">
+            <span id="city">New York</span>
+            <span class="weather__condition">Mostly sunny</span>
           </div>
-          <div class="temperature">
-            <span class="temp__label">77</span>
-            <span id="degrees"></span>
-            <span id="temperature__conversion">F</span>
-          </div>
-          <span class="weather__condition">Mostly sunny</span>
-        </div>
-        <div class="tomorrow__forecast">
-          <h1>Tomorrrow</h1>
           <div class="weather__icon">
             <div class="cloud">
-              <div class="flake"></div>
-              <div class="flake"></div>
+              <div id="rain" class="bolt"></div>
+              <div id="rain" class="bolt"></div>
             </div>
+            <div id="cloudy" class="cloud"></div>
           </div>
           <div class="temperature">
             <span class="temp__label">77</span>
-            <span id="degrees"></span>
-            <span id="temperature__conversion">F</span>
+            <div class="temperature__conversion">
+              <span class="degrees"></span>
+              <span id="farenheight">F</span>
+              <span class="divider"></span>
+              <span class="degrees"></span>
+              <span id="celcius">c</span>
+            </div>
           </div>
-          <span class="weather__condition">Mostly sunny</span>
+        </div>
+        <div class="tomorrow__forecast">
+          <h1>Tomorrow</h1>
+          <div class="weather__details">
+            <span id="city">New York</span>
+            <span class="weather__condition">Mostly sunny</span>
+          </div>
+          <div class="weather__icon">
+            <div class="cloud">
+              <div id="rain" class="bolt"></div>
+              <div id="rain" class="bolt"></div>
+            </div>
+            <div id="cloudy" class="cloud"></div>
+          </div>
+          <div class="temperature">
+            <span class="temp__label">77</span>
+            <div class="temperature__conversion">
+              <span class="degrees"></span>
+              <span id="farenheight">F</span>
+              <span class="divider"></span>
+              <span class="degrees"></span>
+              <span id="celcius">c</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="forecast__panel__footer">
