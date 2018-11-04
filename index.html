@@ -14,13 +14,13 @@
   <header id="main__header">
     <nav>
       <div class="logo">
-        <a href="#"><img src="IMG/logo.png" alt="LOGO"></a>
+        <a href="#"><img src="IMG/weather app logo.png" alt="LOGO"></a>
       </div>
       <div class="search__bar__wrapper">
         <form action="">
           <span></span>
-          <input id="city__input" type="text" placeholder="Show me the weather in..">
-          <button type="submit" id="search__btn">FIND</button>
+          <input id="city__input" type="text" placeholder="Show me the weather in....">
+          <button type="submit" id="search__btn">Submit</button>
           <div class="settings"></div>
       </div>
       </form>
@@ -34,82 +34,87 @@
         <div class="current__forecast">
           <h1>Current Weather</h1>
           <div class="weather__details">
-            <span id="city" class="current__city"></span>
-            <span class="current__weather__condition weather__condition"></span>
+            <span class="city">Miami</span>
+            <span class="current__weather__condition weather__condition">Heavy Rain</span>
           </div>
           <div class="weather__icon">
-            <div class="cloud">
-              <div id="rain" class="bolt"></div>
-              <div id="rain" class="bolt"></div>
+            <div class="current__sun__snow__icon">
+              <div class="current__icon"></div>
+              <div class="current__icon2"></div>
             </div>
-            <div id="cloudy" class="cloud"></div>
+            <div id="y"></div>
           </div>
           <div class="temperature">
-            <span class="current__temp__label temp__label"></span>
+            <span class="current__temp__label temp__label">79</span>
             <div class="temperature__conversion">
-              <span class="degrees"></span>
-              <span id="current farenheight">F</span>
-              <span class="divider"></span>
-              <span class="degrees"></span>
-              <span id="current celcius">c</span>
-            </div>
+                <span class="degrees"></span>
+                <!-- <span class="fahrenheit"></span>
+                <span class="divider"></span>
+                <span class="degrees"></span>
+                <span class="celsius"">c</span> Will be added once I figure out how -->
+              </div>
           </div>
+          <span id="current__wind" class="wind">WIND: 30 mph</span>
+          <span id="current__humidity" class="humidity">HUMIDITY: 100%</span>
         </div>
         <div class="tonight__forecast">
           <h1>Tonight</h1>
           <div class="weather__details">
-            <span id="city">New York</span>
-            <span class="weather__condition">Mostly sunny</span>
+            <span class="city tonight__city">Miami</span>
+            <span class="weather__condition tonight__weather__condition">Clear Sky</span>
           </div>
           <div class="weather__icon">
-            <div class="cloud">
-              <div id="rain" class="bolt"></div>
-              <div id="rain" class="bolt"></div>
+            <div>
+              <div class="tonight__icon"></div>
+              <div class="tonight__icon2"></div>
             </div>
-            <div id="cloudy" class="cloud"></div>
+            <div id="y"></div>
           </div>
           <div class="temperature">
-            <span class="temp__label">77</span>
+            <span class="temp__label tonight__temp__label">75</span>
             <div class="temperature__conversion">
-              <span class="degrees"></span>
-              <span id="farenheight">F</span>
-              <span class="divider"></span>
-              <span class="degrees"></span>
-              <span id="celcius">c</span>
+                <span class="degrees"></span>
+                <!-- <span class="fahrenheit">F</span>
+                <span class="divider"></span>
+                <span class="degrees"></span>
+                <span class="celsius"">c</span> Will be added once I figure out how -->
             </div>
           </div>
+          <span id="tonight__wind" class="wind">WIND: 25 mph</span>
+          <span id="tonight__humidity" class="humidity">HUMIDITY: 25%</span>
         </div>
         <div class="tomorrow__forecast">
           <h1>Tomorrow</h1>
           <div class="weather__details">
-            <span id="city">New York</span>
-            <span class="weather__condition">Mostly sunny</span>
+            <span class="city tomorrow__city">Miami</span>
+            <span class="weather__condition tomorrow__weather__condition">Sunny Sky</span>
           </div>
           <div class="weather__icon">
-            <div class="cloud">
-              <div id="rain" class="bolt"></div>
-              <div id="rain" class="bolt"></div>
+            <div class="tomorrow__sun__snow__icon">
+              <div class="tomorrow__icon"></div>
+              <div class="tomorrow__icon2"></div>
             </div>
-            <div id="cloudy" class="cloud"></div>
+            <div class=""></div>
           </div>
           <div class="temperature">
-            <span class="temp__label">77</span>
-            <div class="temperature__conversion">
+            <span class="temp__label tomorrow__temp__label">85</span>
+         <div class="temperature__conversion">
               <span class="degrees"></span>
-              <span id="farenheight">F</span>
+              <!-- <span class="fahrenheit">F</span>
               <span class="divider"></span>
               <span class="degrees"></span>
-              <span id="celcius">c</span>
+              <span class="celsius"">c</span> Will be added once I figure out how -->
             </div>
           </div>
+          <span id="tomorrow__wind" class="wind">WIND: 14 mph</span>
+          <span id="tomorrow__humidity" class="humidity">HUMIDITY: 65%</span>
         </div>
       </div>
       <div class="forecast__panel__footer">
-        <button class="5__day__forecast__btn">5 Day Forecast</button>
+        <!-- <button class="5__day__forecast__btn">5 Day Forecast</button> Will be added once I figure out how-->
       </div>
     </main>
   </div>
   <script src="js/app.js"></script>
 </body>
-
 </html>
