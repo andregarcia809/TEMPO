@@ -66,65 +66,73 @@ class Display {
     // Gets user's location
     function getLocation() {
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        // Gets user's Weather
+        window.onload = () => {
+          navigator.geolocation.getCurrentPosition(showPosition);
+
+          function showPosition(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude
+
+            const apiKey = 'c338a7319efb7cd8f389ecb4b62ccadb';
+            const Url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}0&lon=${lon}&appid=${apiKey}&units=imperial`;
+
+            fetch(Url)
+              .then(data => {
+                return data.json()
+              })
+
+              // Outputs users weather to current panel
+              .then(res => {
+                const data = res;
+                const name = data.name;
+                const description = data.weather[0].description;
+                const temp = Math.floor(data.main.temp);
+                const wind = 'WIND: ' + Math.floor(data.wind.speed) + ' mph';
+                const humidity = ' HUMIDITY: ' + data.main.humidity + '%';
+
+                display.currentCity.textContent = name;
+                display.currentCondition.textContent = description;
+                display.currentWind.textContent = wind;
+                display.currentHumidity.textContent = humidity;
+                display.currentTemp.textContent = temp;
+
+                // Current Weather
+                if (display.currentCondition == 'clouds' || 'cloudy') {
+                  display.currentForecastPanel.style.backgroundImage = 'url(img/cloudy.jpg)';
+                  display.currentIcon.classList.add('cloud');
+                  display.currentIcon2.classList.add('cloud');
+
+                } else if (display.currentCondition == 'rain') {
+                  display.currentIcon.classList.add('cloud');
+                  display.currentIcon2.classList.add('rain');
+
+                } else if (display.currentCondition == 'snow' || 'flurry' || 'flake') {
+                  display.currentForecastPanel.style.backgroundImage = 'url(img/cloudy.jpg)';
+                  display.currentSunSnowIcon.classList.add(snow);
+                  display.currentIcon.classList.add('flake');
+                  display.currentIcon2.classList.add('flake');
+
+                } else if (display.currentCondition == 'sunny' || 'sun') {
+                  display.currentForecastPanel.style.backgroundImage = 'url(img/sunny.jpg)';
+                  display.currentSunSnow.classList.add('sunny');
+                  display.currentIcon.classList.add('sun');
+
+                } else if (display.currentCondition == 'clear') {
+                  this.currentForecastPanel.style.backgroundImage = 'url(img/sunny.jpg)';
+                }
+
+              })
+
+          }
+        }
+
+
       }
 
-      function showPosition(position) {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude
-
-        const apiKey = 'c338a7319efb7cd8f389ecb4b62ccadb';
-        const Url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}0&lon=${lon}&appid=${apiKey}&units=imperial`;
-
-        fetch(Url)
-          .then(data => {
-            return data.json()
-          })
-
-          // Outputs users weather to current panel
-          .then(res => {
-            const data = res;
-            const name = data.name;
-            const description = data.weather[0].description;
-            const temp = Math.floor(data.main.temp);
-            const wind = 'WIND: ' + Math.floor(data.wind.speed) + ' mph';
-            const humidity = ' HUMIDITY: ' + data.main.humidity + '%';
-
-            display.currentCity.textContent = name;
-            display.currentCondition.textContent = description;
-            display.currentWind.textContent = wind;
-            display.currentHumidity.textContent = humidity;
-            display.currentTemp.textContent = temp;
-
-            // Current Weather
-            if (display.currentCondition == 'clouds' || 'cloudy') {
-              display.currentForecastPanel.style.backgroundImage = 'url(img/cloudy.jpg)';
-              display.currentIcon.classList.add('cloud');
-              display.currentIcon2.classList.add('cloud');
-
-            } else if (display.currentCondition == 'rain') {
-              display.currentIcon.classList.add('cloud');
-              display.currentIcon2.classList.add('rain');
-
-            } else if (display.currentCondition == 'snow' || 'flurry' || 'flake') {
-              display.currentForecastPanel.style.backgroundImage = 'url(img/cloudy.jpg)';
-              display.currentSunSnowIcon.classList.add(snow);
-              display.currentIcon.classList.add('flake');
-              display.currentIcon2.classList.add('flake');
-
-            } else if (display.currentCondition == 'sunny' || 'sun') {
-              display.currentForecastPanel.style.backgroundImage = 'url(img/sunny.jpg)';
-              display.currentSunSnow.classList.add('sunny');
-              display.currentIcon.classList.add('sun');
-
-            } else if (display.currentCondition == 'clear') {
-              this.currentForecastPanel.style.backgroundImage = 'url(img/sunny.jpg)';
-            }
-
-          })
-
-      }
     }
+
+
   }
 
   showWeather(data) {
