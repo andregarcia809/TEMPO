@@ -5,15 +5,9 @@
   box-sizing: border-box;
 }
 
-html *,
-html *:before,
-html *:after {
-  box-sizing: inherit;
-}
-
 body {
   font-family: "Roboto";
-  background-image: linear-gradient(to right bottom, #f53365, #bc3578, #7e3b75, #47365c, #262835);
+  background-image: linear-gradient(to right bottom, #f53365, #f87b06, #ff00dd, #0943e2, #eceef5);
   /* background-repeat: no-repeat; */
   background-size: cover;
 }
@@ -34,36 +28,49 @@ body h1 {
 /* Mobile */
 header nav {
   display: flex;
-  justify-content: space-between;
-  height: 75px;
-  padding: 0 .5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+
+
+
 }
 
 /* Desktop */
 @media screen and (min-width: 768px) {
   header nav {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 75px;
     padding: 0 2rem;
   }
 }
 
-header nav .logo {
-  width: 60px;
-  padding-top: .1rem;
+/* desktop */
+@media screen and (min-width: 768px) {
+  header nav .logo {
+    width: 300px;
+  }
 }
 
-header nav .logo img {
-  position: relative;
-  top: .3rem;
-  width: 100%;
-
+/* Desktop */
+@media screen and (min-width: 768px) {
+  header nav .logo img {
+    position: relative;
+    left: -6rem;
+    width: 100%;
+  }
 }
-
-
 
 header nav .search__bar__wrapper {
   display: flex;
+  justify-content: center;
   position: relative;
   top: -.8rem;
+}
+
+header nav .search__bar__wrapper form {
+  position: relative;
 }
 
 header nav .search__bar__wrapper span {
@@ -72,12 +79,13 @@ header nav .search__bar__wrapper span {
   height: 16px;
   left: 7px;
   position: absolute;
-  top: 29px;
+  top: 40px;
   width: 16px;
+  z-index: 99;
 }
 
 header nav .search__bar__wrapper input {
-  background: rgba(0, 0, 0, .1);
+  background: rgba(31, 19, 19, 0.651);
   border: none;
   border-radius: 1px;
   color: #fff;
@@ -86,7 +94,9 @@ header nav .search__bar__wrapper input {
   padding: 3px 0 3px 3px;
   text-indent: 30px;
   width: 300px;
+  height: 50px;
   margin-top: 1.5rem;
+  font-size: 1.1rem;
 }
 
 ::placeholder {
@@ -112,15 +122,23 @@ header nav .search__bar__wrapper #search__btn {
 
 .container {
   display: flex;
-  width: 80%;
+  /* width: 65%; */
   margin: 0 auto;
   height: 100vh;
 }
-@media screen and (min-width: 768px) {
+
+@media screen and (max-width: 767px) {
   .container {
-    width: 80%;
+    width: 60%;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 40%;
+  }
+}
+
 
 .container .error {
   width: 400px;
@@ -141,7 +159,6 @@ header nav .search__bar__wrapper #search__btn {
 
 /* Mobile */
 .container #forecast__panel .forecast__panel__body {
-  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   row-gap: 2rem;
@@ -151,7 +168,6 @@ header nav .search__bar__wrapper #search__btn {
 /* Desktop  */
 @media screen and (min-width: 768px) {
   .container #forecast__panel .forecast__panel__body {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     column-gap: 2rem;
@@ -161,7 +177,7 @@ header nav .search__bar__wrapper #search__btn {
 }
 
 .container #forecast__panel .forecast__panel__body h1 {
-  color: #1395BA !important;
+  color: #03f0f8 !important;
   font-size: 1.5rem;
 }
 
@@ -172,6 +188,7 @@ header nav .search__bar__wrapper #search__btn {
 
 /* Mobile */
 .container #forecast__panel .forecast__panel__body .current__forecast {
+
   color: #fff;
   background-image: url("../IMG/cloudy.jpg");
   background-repeat: no-repeat;
@@ -182,18 +199,21 @@ header nav .search__bar__wrapper #search__btn {
   -webkit-box-shadow: 10px 10px 63px -9px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 63px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 63px -9px rgba(0, 0, 0, 0.75);
-  height:440px;
+  height: 440px;
 }
 
 /* Desktop */
 @media screen and (min-width: 768px) {
   .container #forecast__panel .forecast__panel__body .current__forecast {
+    width: 100%;
     height: 100%;
+    margin: 0 auto;
   }
 }
 
 /* Mobile */
 .container #forecast__panel .forecast__panel__body .tonight__forecast {
+  display: none;
   color: #fff;
   transition: .3s ease-in-out;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../IMG/night.jpg);
@@ -215,6 +235,7 @@ header nav .search__bar__wrapper #search__btn {
 
 /* Mobile */
 .container #forecast__panel .forecast__panel__body .tomorrow__forecast {
+  display: none;
   color: #fff;
   transition: .3s ease-in-out;
   background-image: url(../IMG/sunny.jpg);
@@ -226,6 +247,7 @@ header nav .search__bar__wrapper #search__btn {
   box-shadow: 10px 10px 63px -9px rgba(0, 0, 0, 0.75);
   height: 450px;
 }
+
 /* Desktop */
 @media screen and (min-width: 768px) {
   .container #forecast__panel .forecast__panel__body .tomorrow__forecast {
